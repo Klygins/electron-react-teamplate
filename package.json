@@ -1,0 +1,55 @@
+{
+  "name": "electron-react-teamplate",
+  "version": "1.0.0",
+  "repository": "https://github.com/farawayCC/electron-react-teamplate.git",
+  "author": "your_username <iosdevfarconsoft@gmail.com>",
+  "license": "MIT",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "electron": "^12.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "icon": "./src/icon.png",
+  "build": {
+    "appId": "com.example.appId",
+    "productName": "yourProductName",
+    "copyright": "Copyright © 2021 ${author}",
+    "mac": {
+      "icon": "./src/icon.png",
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "icon": "./src/icon.png"
+    },
+    "files": [
+      "./src/*"
+    ],
+    "directories": {
+      "buildResources": "src"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
