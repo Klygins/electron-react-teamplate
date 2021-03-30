@@ -14,7 +14,9 @@ function createWindow() {
     height: 680,
     icon: '../public/icon.ico',
     webPreferences: {
-      backgroundThrottling: false
+      backgroundThrottling: false,
+      contextIsolation: false,
+      preload: __dirname + '\\electron-preload.js'
     }
   });
   mainWindow.loadURL(
