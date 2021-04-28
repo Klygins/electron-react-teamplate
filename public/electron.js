@@ -16,7 +16,7 @@ function createWindow() {
     webPreferences: {
       backgroundThrottling: false,
       contextIsolation: false,
-      preload:  path.join(__dirname , 'electron-preload.js')
+      preload: path.join(__dirname, 'electron-preload.js')
     }
   });
   mainWindow.loadURL(
@@ -26,6 +26,8 @@ function createWindow() {
   );
   mainWindow.on("closed", () => (mainWindow = null));
 }
+
+app.setAppUserModelId("Your app name")
 
 app.on("ready", createWindow);
 
