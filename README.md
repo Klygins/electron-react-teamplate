@@ -1,7 +1,7 @@
 # electron-react-teamplate
 Without overengineering
 
--clone
+- clone
 - ```yarn```
 - ```yarn build```
 - get your app in /dist
