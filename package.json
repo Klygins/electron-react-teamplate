@@ -1,8 +1,7 @@
 {
   "name": "electron-react-teamplate",
   "version": "1.0.0",
-  "repository": "https://github.com/farawayCC/electron-react-teamplate.git",
-  "author": "your_username <iosdevfarconsoft@gmail.com>",
+  "author": "your_username <your_email>",
   "license": "MIT",
   "main": "public/electron.js",
   "homepage": "./",
