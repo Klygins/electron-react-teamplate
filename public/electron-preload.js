@@ -1,2 +1,5 @@
-// Passing electron functionality into React
-window.ipcRenderer = require('electron').ipcRenderer;
+const { ipcRenderer, contextBridge } = require('electron')
+
+contextBridge.exposeInMainWorld("myApp", {
+    sayHello: (arg) => ipcRenderer.invoke("say-hello", arg),
+})
