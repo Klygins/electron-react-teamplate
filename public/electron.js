@@ -6,6 +6,7 @@ const {
 
 const path = require("path");
 const isDev = require("electron-is-dev");
+const { ipcMain } = require("electron");
 let mainWindow;
 
 function createWindow() {
@@ -15,7 +16,6 @@ function createWindow() {
     icon: '../public/icon.ico',
     webPreferences: {
       backgroundThrottling: false,
-      contextIsolation: false,
       preload: path.join(__dirname, 'electron-preload.js')
     }
   });
@@ -42,3 +42,10 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
+
+ipcMain.handle("say-hello", (event, arg) => {
+  console.log("Argument for 'say-hello' function:", arg)
+
+  return "Hello from the main process: The app version is: " + app.getVersion();
+})
